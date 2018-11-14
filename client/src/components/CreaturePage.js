@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import { createSecureContext } from 'tls';
 
 class CreaturePage extends Component {
     state = {
@@ -15,7 +16,7 @@ class CreaturePage extends Component {
         console.log('name', event.target.name);
         console.log('value', event.target.value);
         const createdNewCreature = {...this.state.newCreature};
-        createdNewCreature {event.target.name} = event.target.value;
+        createdNewCreature [event.target.name] = event.target.value;
         this.setState({newCreature: createdNewCreature}); 
     };
 
@@ -88,3 +89,5 @@ class CreaturePage extends Component {
         );
       }
      }
+
+     export default CreaturePage
